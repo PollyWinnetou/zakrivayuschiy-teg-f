@@ -1,1 +1,44 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --font-family-main: 'Inter-Variable';
+  --font-family-accent: 'PressStart2P-Regular';
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  --inline-size-dialog: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
+  --font-size-header-title: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  --font-size-header-text: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  --padding-inline: clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem);
+  --padding-block: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
+  --padding_inline_ok: clamp(2.625rem, 3.4904rem + -3.6923vw, 1.875rem);
+  --font-size-main: 18px;
+  --margin-block: 100px;
+  --bg-image-page: 
+    repeating-linear-gradient(
+    to right, 
+    transparent 0px,
+    transparent 2px,
+    #d3d3d3 2px,
+    #d3d3d3 4px),
+
+    repeating-linear-gradient(
+    to bottom, 
+    transparent 0px,
+    transparent 2px,
+    #d3d3d3 2px,
+    #d3d3d3 4px),
+
+    linear-gradient(
+    to bottom,
+    #e7e7e7 0.01%, 
+    #1a1a1a 100%);
+  --text-stroke-color: #fff;
+  --border: 2px solid #000;
+  --bg-color-main: #fff;
+  --accent-color: #000;
+  --contour-color: #000;
+  --animation-fill-color: #ff0000;
+  --fill-heart: #ff0000;
+  --core-heart: #fff;
+  --main-body: #fff;
+  --box-shadow: 2px 2px 0px #000;
+}
