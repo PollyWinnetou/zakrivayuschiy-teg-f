@@ -148,7 +148,7 @@
 .card__like-button {
   display: flex;
   padding: 12.5px 37px 12.5px 37px;
-  border: var(--border);  
+  border: var(--border);
   cursor: pointer;
   inline-size: 130px;
   block-size: 38px;
@@ -183,13 +183,13 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  border: var(--border);  
-  background-color: var(--bg-color-main); 
+  border: var(--border);
+  background-color: var(--bg-color-main);
   cursor: pointer;
   padding: 15px 20px;
   align-self: center;
   overflow: hidden;
-  transition: all 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
   z-index: 1;
 }
 
@@ -280,11 +280,11 @@ dialog::backdrop {
   display: flex;
   padding: 12.5px 114.5px;
   position: relative;
-  border: var(--border);   
+  border: var(--border);
   cursor: pointer;
   align-self: center;
   overflow: hidden;
-  transition: all 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
   background-color: transparent;
   font-family: var(--font-family-accent);
   text-transform: uppercase;
@@ -421,7 +421,7 @@ dialog::backdrop {
   fill: var(--animation-fill-color);
 }
 
-@media (width >= 375px) {
+@media (width > 375px) {
   .button_save {
     flex-direction: row;
     align-items: center;
