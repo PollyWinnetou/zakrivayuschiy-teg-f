@@ -240,7 +240,7 @@ dialog::backdrop {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding-inline: 42px;
+  padding-inline: 40px;
   padding-block: 30px;
   overflow: hidden;
   min-inline-size: 341px;
@@ -282,6 +282,7 @@ dialog::backdrop {
   padding-block: 12.5px;
   text-transform: uppercase;
   inline-size: clamp(16.0625rem, 15.2702rem + 3.3803vw, 18.3125rem);
+  inline-size: 100%;
 }
 
 .button:focus-visible {
@@ -328,16 +329,16 @@ dialog::backdrop {
 
 .core {
   fill: var(--core-heart);
-  transition: fill 0.3s ease;
+  transition: fill 0.3s linear;
 }
 
 .main-body {
   fill: transparent;
-  transition: fill 0.3s ease;
+  transition: fill 0.3s linear;
 }
 
 .contour {
-  transition: fill 0.06s ease 0.3s;
+  transition: fill 0.06s linear 0.3s;
 }
 
 .like-icon:hover .core {
@@ -346,16 +347,16 @@ dialog::backdrop {
 
 .like-icon:hover .main-body {
   fill: var(--accent-color);
-  transition: fill 0.3s ease 0.05s; 
+  transition: fill 0.3s linear 0.05s; 
 }
 
 .like-icon:not(:hover) .core {
-  transition: fill 0.3s ease 0.03s;
+  transition: fill 0.3s linear 0.03s;
 }
 
 .like-icon:not(:hover) .main-body {
   fill: transparent;
-  transition: fill 0.03s ease;
+  transition: fill 0.03s linear;
 }
 
 .like-icon:active .core {
@@ -366,7 +367,7 @@ dialog::backdrop {
   fill: var(--animation-fill-color);
 }
 
-@media (width > 375px) {
+@media (width > 376px) {
   .button_save {
     flex-direction: row;
     align-items: center;
