@@ -20,7 +20,7 @@
   border: var(--border);
   padding-inline: var(--padding-inline);
   padding-block: var(--padding-block);
-  font-family: var(--font-family-accent), fantasy;
+  font-family: var(--font-family-accent), fantasy, sans-serif;
   text-transform: uppercase;
   background-color: var(--bg-color-main);
 }
@@ -61,7 +61,7 @@
   border: var(--border);
   border-bottom: none;
   padding: 5px 10px;
-  font-family: var(--font-family-main);
+  font-family: var(--font-family-main), sans-serif;
   font-size: var(--font-size-main);
   line-height: 119%;
   font-variation-settings: "wght" var(--font-weight-bold, 700);
@@ -77,12 +77,12 @@
 
 .label_image {
   position: absolute;
-  top: 25px;
-  right: 13px;
+  top: clamp(1.5625rem, 1.5185rem + 0.1878vw, 1.6875rem);
+  right: clamp(0.875rem, 0.6329rem + 1.0329vw, 1.5625rem);
   z-index: 1;
   opacity: 0.5;
   color: #000;
-  font-family: var(--font-family-accent);
+  font-family: var(--font-family-accent), fantasy, sans-serif;
   font-size: 14px;
   line-height: 100%;
   text-shadow: 
@@ -122,7 +122,7 @@
   display: flex;
   flex-direction: column;
   gap: 27px;
-  font-family: var(--font-family-main);
+  font-family: var(--font-family-main), sans-serif;
   font-size: var(--font-size-main);
 }
 
@@ -139,21 +139,28 @@
   justify-content: center;
   align-items: center;
   border: 2px solid transparent;
+  padding: 0;
   padding-block-start: 2px;
   background-color: transparent;
   cursor: pointer;
   block-size: 38px;
 }
 
-.card__like-button {
+.button {
   position: relative;
+  z-index: 1;
   display: flex;
   justify-content: center;
   border: var(--border);
-  padding: 12.5px 37px 12.5px 37px;
   overflow: hidden;
   background-color: var(--bg-color-main);
+  transition: transform 0.5s ease-in-out;
+  transition: box-shadow 0.3s ease;
   cursor: pointer;
+}
+
+.card__like-button {
+  padding: 12.5px 37px 12.5px 37px;
   inline-size: 130px;
   block-size: 38px;
 }
@@ -161,7 +168,7 @@
 .button__text {
   z-index: 2;
   color: #fff;
-  font-family: var(--font-family-accent);
+  font-family: var(--font-family-accent), fantasy, sans-serif;
   font-size: 14px;
   line-height: 90%;
   mix-blend-mode: difference;
@@ -171,7 +178,7 @@
   text-transform: uppercase;
 }
 
-.footer {
+.save_section {
   display: flex;
   flex-direction: column;
   margin-block-start: 52px;
@@ -179,18 +186,10 @@
 }
 
 .button_save {
-  position: relative;
-  z-index: 1;
-  display: flex;
   flex-direction: column;
   gap: 8px;
   align-self: center;
-  border: var(--border);
   padding: 15px 20px;
-  overflow: hidden;
-  background-color: var(--bg-color-main);
-  transition: transform 0.5s ease-in-out;
-  cursor: pointer;
 }
 
 .contrast {
@@ -229,7 +228,7 @@
   position: fixed;
   margin: auto;
   border: var(--border);
-  font-family: var(--font-family-accent);
+  font-family: var(--font-family-accent), fantasy, sans-serif;
   background-color: var(--bg-color-main);
 }
 
@@ -241,18 +240,18 @@ dialog::backdrop {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 30px 42px;
+  padding-inline: 42px;
+  padding-block: 30px;
   overflow: hidden;
   min-inline-size: 341px;
   inline-size: var(--inline-size-dialog);
-  block-size: 191px;
 }
 
 .dialog_floppy {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
 }
 
 .button_floppy {
@@ -277,21 +276,21 @@ dialog::backdrop {
 }
 
 .button_OK {
-  position: relative;
-  display: flex;
   justify-self: center;
   align-self: center;
-  border: var(--border);
-  padding: 12.5px 114.5px;
-  overflow: hidden;
-  font-family: var(--font-family-accent);
+  padding-inline: clamp(7.15625rem, 6.7601rem + 1.6901vw, 8.28125rem);
+  padding-block: 12.5px;
   text-transform: uppercase;
-  background-color: transparent;
-  transition: transform 0.5s ease-in-out;
-  cursor: pointer;
+  inline-size: clamp(16.0625rem, 15.2702rem + 3.3803vw, 18.3125rem);
 }
 
-.button_OK::before {
+.button:focus-visible {
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  outline: none;
+}
+
+.button::before {
   content: " ";
   position: absolute;
   top: 0;
@@ -304,62 +303,7 @@ dialog::backdrop {
   transform: translateX(-100%);
 }
 
-.button_OK:hover::before {
-  transform: translateX(0);
-}
-
-.button_save:focus {
-  border: var(--border);
-  box-shadow: var(--box-shadow);
-  outline: none;
-  transition: box-shadow 0.3s ease;
-}
-
-.card__like-button:focus {
-  border: var(--border);
-  box-shadow: var(--box-shadow);
-  outline: none;
-  transition: box-shadow 0.3s ease;
-}
-
-.button_OK:focus {
-  border: var(--border);
-  box-shadow: var(--box-shadow);
-  outline: none;
-  transition: box-shadow 0.3s ease;
-}
-
-.button_save::before {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  background-color: var(--accent-color);
-  transition: transform 0.5s ease-in-out;
-  transform: translateX(-100%);
-}
-
-.button_save:hover::before {
-  transform: translateX(0);
-}
-
-.card__like-button::before {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  background-color: var(--accent-color);
-  transition: transform 0.5s ease-in-out;
-  transform: translateX(-100%);
-}
-
-.card__like-button:hover::before {
+.button:hover::before {
   transform: translateX(0);
 }
 
@@ -384,12 +328,12 @@ dialog::backdrop {
 
 .core {
   fill: var(--core-heart);
-  transition: fill 0.3s ease 0.3s;
+  transition: fill 0.3s ease;
 }
 
 .main-body {
   fill: transparent;
-  transition: fill 0.5s ease 0.3s;
+  transition: fill 0.3s ease;
 }
 
 .contour {
@@ -402,6 +346,7 @@ dialog::backdrop {
 
 .like-icon:hover .main-body {
   fill: var(--accent-color);
+  transition: fill 0.3s ease 0.05s; 
 }
 
 .like-icon:not(:hover) .core {
@@ -410,7 +355,7 @@ dialog::backdrop {
 
 .like-icon:not(:hover) .main-body {
   fill: transparent;
-  transition: fill 0.03s ease 0s;
+  transition: fill 0.03s ease;
 }
 
 .like-icon:active .core {
@@ -443,6 +388,6 @@ dialog::backdrop {
   }
 
   .dialog[open] {
-    padding: 30px;
+    padding-inline: 30px;
   }
 }
